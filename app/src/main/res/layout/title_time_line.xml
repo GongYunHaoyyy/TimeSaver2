@@ -7,7 +7,7 @@
     android:orientation="horizontal">
 
     <ImageButton
-        android:id="@+id/ib_menu"
+        android:id="@+id/ib_opendrawer"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
@@ -19,8 +19,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_toEndOf="@+id/ib_menu"
-        android:layout_toRightOf="@+id/ib_menu"
+        android:layout_toEndOf="@+id/ib_opendrawer"
         android:layout_marginLeft="@dimen/fab_margin"
         android:gravity="center"
         android:text="TimeLine"
