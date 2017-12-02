@@ -145,6 +145,30 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
+    <LinearLayout
+        android:id="@+id/AM"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_margin="@dimen/setting_spacing"
+            android:layout_width="@dimen/sub_huge_text"
+            android:layout_height="@dimen/sub_huge_text"
+            android:src="@drawable/app_manage_img"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/setting_spacing"
+            android:textSize="@dimen/medium_text"
+            android:gravity="center|start"
+            android:textColor="@color/accent_white"
+            android:text="App Manage"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#5ed4cf"/>
 
     <LinearLayout
         android:id="@+id/tr_LL"

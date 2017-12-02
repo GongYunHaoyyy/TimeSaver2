@@ -2,20 +2,21 @@ package com.gongyunhaoyyy.timesaver;
 
 import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import com.gongyunhaoyyy.timesaver.appcontrol.AppManageActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     ImageButton openDrawer;
     DrawerLayout drawerLayout;
-    LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting;
+    LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting,appManage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         openDrawer.setOnClickListener( this );
         timeLine.setOnClickListener( this );
         calender.setOnClickListener( this );
+        appManage.setOnClickListener(this);
     }
 
     private void paddingWindow() {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         timeReport=(LinearLayout)findViewById( R.id.tr_LL );
         sheQu=(LinearLayout)findViewById( R.id.ts_LL );
         setting=(LinearLayout)findViewById( R.id.st_LL );
+        appManage=(LinearLayout)findViewById(R.id.AM);
     }
 
     @Override
@@ -58,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.cld_LL:               //Calender
                 Intent intent=new Intent( MainActivity.this,CalenderActivity.class );
                 startActivity( intent );
+                break;
+            case R.id.AM:
+                Intent intentToAM=new Intent( MainActivity.this,AppManageActivity.class );
+                startActivity( intentToAM );
                 break;
             case R.id.td_LL:                //To Do
                 break;
