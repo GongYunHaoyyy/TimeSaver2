@@ -29,14 +29,14 @@
         </activity>
         <activity android:name=".CalenderActivity">
         </activity>
-<<<<<<< HEAD
         <activity android:name=".RegisterActivity">
         </activity>
-=======
         <activity android:name=".appcontrol.ThirdPartAppActivity" />
-        <activity android:name=".appcontrol.ManageAppDetail"></activity>
-        <activity android:name=".appcontrol.AppManageActivity"></activity>
->>>>>>> refs/remotes/origin/master
+        <activity android:name=".appcontrol.ManageAppDetail">
+        </activity>
+        <activity android:name=".appcontrol.AppManageActivity">
+        </activity>
+
     </application>
 
 </manifest>
