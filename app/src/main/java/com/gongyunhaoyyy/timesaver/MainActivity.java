@@ -1,10 +1,14 @@
 package com.gongyunhaoyyy.timesaver;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,9 +17,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    ImageButton openDrawer;
-    DrawerLayout drawerLayout;
-    LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting;
+    private ImageButton openDrawer;
+    private DrawerLayout drawerLayout;
+    private LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting,monitor;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         openDrawer.setOnClickListener( this );
         timeLine.setOnClickListener( this );
         calender.setOnClickListener( this );
+        DividerItemDecoration divider=new DividerItemDecoration( this,DividerItemDecoration.VERTICAL );
+        divider.setDrawable( ContextCompat.getDrawable(this,R.drawable.custom_divider) );
+        recyclerView.addItemDecoration( divider );
     }
 
     private void paddingWindow() {
@@ -45,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         timeReport=(LinearLayout)findViewById( R.id.tr_LL );
         sheQu=(LinearLayout)findViewById( R.id.ts_LL );
         setting=(LinearLayout)findViewById( R.id.st_LL );
+        monitor=(LinearLayout)findViewById( R.id.mlt_LL );
+        recyclerView=(RecyclerView)findViewById( R.id.timeLine_recycler );
     }
 
     @Override
@@ -62,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.td_LL:                //To Do
                 break;
             case R.id.dl_LL:                //DeadLine
+                break;
+            case R.id.mlt_LL:               //Monitor
                 break;
             case R.id.tr_LL:                //TimeReport
                 break;

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_detail"
+        android:textSize="@dimen/sub_huge_text"
+        android:textColor="@color/accent_black"
+        android:layout_marginBottom="50dp"/>
+
+    <EditText
+        android:id="@+id/reg_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:padding="@dimen/big_corner"
+        android:background="@drawable/shape_edittext"
+        android:textSize="@dimen/sub_big_text"
+        android:layout_margin="@dimen/big_text"
+        android:hint="请输入你的手机号"/>
+    <Button
+        android:id="@+id/reg_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:background="@drawable/selector_bt"
+        android:text="@string/register"
+        android:textColor="@color/accent_white"
+        android:layout_marginLeft="@dimen/big_text"
+        android:layout_marginRight="@dimen/big_text"/>
+
+</LinearLayout>

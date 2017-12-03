@@ -27,7 +27,7 @@
     <dimen name="card_corner_radius">0dp</dimen>
     <dimen name="card_elevation">2dp</dimen>
     <dimen name="card_spacing">10dp</dimen>
-
+    <dimen name="line">0.5dp</dimen>
 
     <dimen name="status_height">25dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
@@ -37,4 +37,5 @@
     <dimen name="toast_icon_size">32dp</dimen>
     <dimen name="icon_size">72dp</dimen>
     <dimen name="corner">6dp</dimen>
+    <dimen name="big_corner">8dp</dimen>
 </resources>

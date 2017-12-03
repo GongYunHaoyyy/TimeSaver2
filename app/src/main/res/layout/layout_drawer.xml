@@ -4,15 +4,28 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/accent_cyan"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools">
 
-    <ImageButton
-        android:layout_gravity="end"
-        android:background="@drawable/ic_exit"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/big_spacing"
         android:layout_marginTop="@dimen/huge_spacing"
-        android:layout_marginRight="@dimen/setting_spacing"
-        android:layout_width="@dimen/big_spacing"
-        android:layout_height="@dimen/big_spacing"/>
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="@dimen/big_spacing"
+            android:layout_height="@dimen/big_spacing"
+            android:layout_marginLeft="@dimen/sub_medium_spacing"
+            android:background="@drawable/ic_exit_drawer"/>
+
+        <ImageButton
+            android:layout_width="@dimen/sub_big_spacing"
+            android:layout_height="@dimen/sub_big_spacing"
+            android:layout_marginRight="@dimen/sub_medium_spacing"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_exit"/>
+    </RelativeLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="85dp"
@@ -61,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="Time Line"/>
@@ -86,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="To Do"/>
@@ -110,11 +123,36 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:layout_marginLeft="@dimen/tag_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="DeadLine"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#5ed4cf"/>
+
+    <LinearLayout
+        android:id="@+id/mlt_LL"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_margin="@dimen/setting_spacing"
+            android:layout_width="@dimen/sub_huge_text"
+            android:layout_height="@dimen/sub_huge_text"
+            android:src="@drawable/ic_moniter"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/tag_text"
+            android:textSize="@dimen/sub_medium_text"
+            android:gravity="center|start"
+            android:textColor="@color/accent_white"
+            android:text="Monitor"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -136,7 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="Calender"/>
@@ -161,7 +199,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="Time Report"/>
@@ -186,7 +224,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="TimeSaver社区"/>
@@ -211,7 +249,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/setting_spacing"
-            android:textSize="@dimen/medium_text"
+            android:textSize="@dimen/sub_medium_text"
             android:gravity="center|start"
             android:textColor="@color/accent_white"
             android:text="Settings"/>
