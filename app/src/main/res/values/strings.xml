@@ -12,5 +12,4 @@
     <string name="request_permission">为了能够正常使用，APP需要得到以下权限</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
