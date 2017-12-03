@@ -1,6 +1,5 @@
 package com.gongyunhaoyyy.timesaver;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
@@ -14,12 +13,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import com.gongyunhaoyyy.timesaver.appcontrol.AppManageActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private ImageButton openDrawer;
     private DrawerLayout drawerLayout;
-    private LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting,monitor;
+    private LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting,appManage;
     private RecyclerView recyclerView;
 
     @Override
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DividerItemDecoration divider=new DividerItemDecoration( this,DividerItemDecoration.VERTICAL );
         divider.setDrawable( ContextCompat.getDrawable(this,R.drawable.custom_divider) );
         recyclerView.addItemDecoration( divider );
+        appManage.setOnClickListener(this);
     }
 
     private void paddingWindow() {
@@ -53,8 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         timeReport=(LinearLayout)findViewById( R.id.tr_LL );
         sheQu=(LinearLayout)findViewById( R.id.ts_LL );
         setting=(LinearLayout)findViewById( R.id.st_LL );
-        monitor=(LinearLayout)findViewById( R.id.mlt_LL );
         recyclerView=(RecyclerView)findViewById( R.id.timeLine_recycler );
+        appManage=(LinearLayout)findViewById(R.id.AM);
     }
 
     @Override
@@ -69,11 +70,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent=new Intent( MainActivity.this,CalenderActivity.class );
                 startActivity( intent );
                 break;
+            case R.id.AM:                   //moniter
+                Intent intentToAM=new Intent( MainActivity.this,AppManageActivity.class );
+                startActivity( intentToAM );
+                break;
             case R.id.td_LL:                //To Do
                 break;
             case R.id.dl_LL:                //DeadLine
-                break;
-            case R.id.mlt_LL:               //Monitor
                 break;
             case R.id.tr_LL:                //TimeReport
                 break;
