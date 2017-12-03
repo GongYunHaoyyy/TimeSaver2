@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/layout_titlebar_right_tv"/>
+<LinearLayout
+    android:layout_marginTop="20dp"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/app_detail_img"
+        android:layout_width="75dp"
+        android:layout_height="75dp" />
+    <TextView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/app_datail_name"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider"
+        android:showDividers="middle">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提醒方式"/>
+        <TextView
+            android:id="@+id/remind_way"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知栏、震动"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/divider"
+        android:showDividers="middle">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重复间隔"/>
+        <TextView
+            android:id="@+id/repetition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="五分钟"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+       <TextView
+           android:layout_marginLeft="10dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:text="设置时长"/>
+        <TextView
+            android:id="@+id/setTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="0时00分"/>
+
+    </LinearLayout>
+</LinearLayout>

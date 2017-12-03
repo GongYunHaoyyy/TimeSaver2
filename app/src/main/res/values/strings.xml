@@ -12,7 +12,10 @@
     <string name="request_permission">为了能够正常使用，APP需要得到以下权限</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+<<<<<<< HEAD
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="register_detail">注册TimeSaver账号</string>
     <string name="register">注册</string>
+=======
+>>>>>>> 979e0f3c968f60413aabf13058fd104a0b303e7c
 </resources>
