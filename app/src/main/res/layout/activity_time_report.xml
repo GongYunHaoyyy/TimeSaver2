@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.gongyunhaoyyy.timesaver.timeReportActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <include
+        layout="@layout/title_review"/>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:background="@drawable/timereport_background14"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+        <HorizontalScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+        <LinearLayout
+            android:id="@+id/month_button_list"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button1"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button2"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button3"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button4"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button5"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button6"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button7"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button8"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button9"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button10"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button11"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+            <Button
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/month_button12"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/selector_monthbutton"
+                android:textColor="@color/selector_monthbuttton_text"
+                android:text="February"
+                android:textAllCaps="false"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/snoozed"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/yellow_circle"
+                    android:src="@drawable/yellow_circle" />
+
+                <TextView
+                    android:textColor="@color/accent_white"
+                    android:text="40"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textSize="12sp"
+                    android:gravity="center_horizontal"
+                    android:text="snoozed"
+                    android:textColor="@color/accent_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/completed"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/yellow_circle"
+                    android:src="@drawable/blue_circle" />
+
+                <TextView
+                    android:textColor="@color/accent_white"
+                    android:text="40"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textSize="12sp"
+                    android:gravity="center_horizontal"
+                    android:text="completed"
+                    android:textColor="@color/accent_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/overdue"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/yellow_circle"
+                    android:src="@drawable/red_circle" />
+
+                <TextView
+                    android:textColor="@color/accent_white"
+                    android:text="40"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="25sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textSize="12sp"
+                    android:gravity="center_horizontal"
+                    android:text="overdue"
+                    android:textColor="@color/accent_white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+40dp
+    <LinearLayout
+        android:background="@color/accent_white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:gravity="center"
+            android:text="5"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:text="10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:text="15"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:text="20"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:text="25"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:text="30"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>
