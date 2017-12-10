@@ -6,78 +6,67 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gongyunhaoyyy.timesaver.R;
+import com.gongyunhaoyyy.timesaver.TaskClass;
+import com.gongyunhaoyyy.timesaver.TaskDataBase;
+
+import org.litepal.crud.DataSupport;
+
 import java.util.List;
 
 /**
  * Created by acer on 2017/12/2.
  */
 
-public class TimeLineAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder> {
+    private List<TaskClass> mTaskList;
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+            View taskview;
+            TextView timeTV,contentTV;
+
+            public ViewHolder(View itemView) {
+                super( itemView );
+                taskview=itemView;
+                timeTV=(TextView)itemView.findViewById( R.id.time_TV );
+                contentTV=(TextView)itemView.findViewById( R.id.content_TV );
+            }
+        }
+
+    public TimeLineAdapter(List<TaskClass> taskList){
+        mTaskList=taskList;
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view= LayoutInflater.from( parent.getContext() ).inflate( R.layout.item_timeline,parent,false );
+            final ViewHolder viewHolder=new ViewHolder( view );
+//              viewHolder.timeTV.setOnClickListener(  );
+//              viewHolder.contentTV.setOnClickListener(  );
+//              对子项监听
+            viewHolder.taskview.setOnClickListener( new View.OnClickListener( ) {
+                @Override
+                public void onClick(View v) {
+                    int position=viewHolder.getAdapterPosition();
+                    TaskClass noteClass=mTaskList.get( position );
+                    mTaskList.remove( position );
+                    notifyDataSetChanged();
+                    DataSupport.delete( TaskDataBase.class,noteClass.getId() );
+                }
+            } );
+            return viewHolder;
+    }
 
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        TaskClass taskClass=mTaskList.get( position );
+        holder.timeTV.setText( taskClass.getTime() );
+        holder.contentTV.setText( taskClass.getContent() );
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mTaskList.size();
     }
 }
-
-//
-//    private List<NoteClass> mNotelist;
-//
-//static class ViewHolder extends RecyclerView.ViewHolder {
-//    View noteview;
-//    TextView content1;
-//    TextView content2;
-//
-//    public ViewHolder(View itemView) {
-//        super( itemView );
-//        noteview=itemView;
-//        content1=(TextView)itemView.findViewById( R.id.content1 );
-//        content2=(TextView)itemView.findViewById( R.id.content2 );
-//    }
-//}
-//
-//    public RecyclerNoteAdapter(List<NoteClass> noteList){
-//        mNotelist=noteList;
-//    }
-//
-//    @Override
-//    public RecyclerNoteAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        View view= LayoutInflater.from( parent.getContext() ).inflate( R.layout.note_item_recy,parent,false );
-//        final ViewHolder viewHolder=new ViewHolder( view );
-//        //        viewHolder.content1.setOnClickListener(  );
-//        //        viewHolder.content2.setOnClickListener(  );
-//        //        对子项监听
-//        viewHolder.noteview.setOnClickListener( new View.OnClickListener( ) {
-//            @Override
-//            public void onClick(View v) {
-//                int position=viewHolder.getAdapterPosition();
-//                NoteClass noteClass=mNotelist.get( position );
-//                mNotelist.remove( position );
-//                notifyDataSetChanged();
-//                DataSupport.delete( NoteContent.class,noteClass.getId() );
-//            }
-//        } );
-//        return viewHolder;
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(RecyclerNoteAdapter.ViewHolder holder, int position) {
-//        NoteClass noteClass=mNotelist.get( position );
-//        holder.content1.setText( noteClass.getContent() );
-//        holder.content2.setText( noteClass.getTime() );
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return mNotelist.size();
-//    }
 

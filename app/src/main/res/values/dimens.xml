@@ -30,6 +30,7 @@
     <dimen name="line">0.5dp</dimen>
 
     <dimen name="status_height">25dp</dimen>
+    <dimen name="toolbar_height">45dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="tag_text">12sp</dimen>
     <dimen name="setting_spacing">10dp</dimen>

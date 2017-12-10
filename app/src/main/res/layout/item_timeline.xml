@@ -12,11 +12,14 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/time_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="20:19"
             android:gravity="center"
-            android:layout_gravity="center"/>
+            android:layout_margin="@dimen/sub_medium_spacing"
+            android:textSize="@dimen/small_text"
+            android:layout_gravity="center|top"/>
 
     </LinearLayout>
 
@@ -27,12 +30,13 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/content_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="六级模拟试卷"
             android:gravity="center|start"
             android:layout_margin="@dimen/sub_medium_spacing"
-            android:textSize="@dimen/medium_text"/>
+            android:textSize="@dimen/sub_medium_text"/>
 
     </LinearLayout>
 </LinearLayout>

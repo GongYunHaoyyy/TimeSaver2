@@ -5,25 +5,48 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/card_spacing"
+        android:src="@drawable/ic_login"/>
+
     <TextView
         android:id="@+id/tv_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register_detail"
-        android:textSize="@dimen/sub_huge_text"
+        android:textSize="@dimen/big_text"
         android:textColor="@color/accent_black"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="30dp"/>
 
     <EditText
-        android:id="@+id/reg_et"
+        android:id="@+id/reg_et1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:padding="@dimen/big_corner"
         android:background="@drawable/shape_edittext"
         android:textSize="@dimen/sub_big_text"
-        android:layout_margin="@dimen/big_text"
-        android:hint="请输入你的手机号"/>
+        android:layout_marginLeft="@dimen/big_text"
+        android:layout_marginRight="@dimen/big_text"
+        android:layout_marginTop="@dimen/big_text"
+        android:layout_marginBottom="@dimen/card_spacing"
+        android:hint="邮箱"/>
+
+    <EditText
+        android:id="@+id/reg_et2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:padding="@dimen/big_corner"
+        android:background="@drawable/shape_edittext"
+        android:textSize="@dimen/sub_big_text"
+        android:layout_marginLeft="@dimen/big_text"
+        android:layout_marginRight="@dimen/big_text"
+        android:layout_marginBottom="@dimen/big_text"
+        android:hint="密码"/>
     <Button
         android:id="@+id/reg_bt"
         android:layout_width="match_parent"
