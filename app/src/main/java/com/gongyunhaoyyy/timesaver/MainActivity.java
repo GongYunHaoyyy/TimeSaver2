@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageButton add,search;
     private List<TaskClass> mList=new ArrayList<>(  );
     private RecyclerView recyclerView;
+    private Intent intentcal,intenttodo,intentdl,intenttr,intentsq,intentset,intentam;
     GridLayoutManager layoutManager;
 
     @Override
@@ -49,16 +50,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         paddingWindow();
         init();
         initList();
-        openDrawer.setOnClickListener( this );
-        timeLine.setOnClickListener( this );
-        calender.setOnClickListener( this );
+        initIntents();
         DividerItemDecoration divider=new DividerItemDecoration( this,DividerItemDecoration.VERTICAL );
         divider.setDrawable( ContextCompat.getDrawable(this,R.drawable.custom_divider) );
         recyclerView.addItemDecoration( divider );
-        appManage.setOnClickListener(this);
-        add.setOnClickListener( this );
-
-
+        SetClickListener();
         layoutManager=new GridLayoutManager(MainActivity.this,1 );
         recyclerView.setLayoutManager( layoutManager );
         timeLineAdapter=new TimeLineAdapter( mList );
@@ -115,32 +111,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tl_LL:                //TimeLine
                 break;
             case R.id.cld_LL:               //Calender
-                Intent intent=new Intent( MainActivity.this,CalenderActivity.class );
-                startActivity( intent );
+                startActivity( intentcal );
                 break;
             case R.id.AM:                   //moniter
-                Intent intentToAM=new Intent( MainActivity.this,AppManageActivity.class );
-                startActivity( intentToAM );
+                startActivity( intentam );
                 break;
             case R.id.td_LL:                //To Do
+                startActivity( intenttodo );
                 break;
             case R.id.dl_LL:                //DeadLine
+                startActivity( intentdl );
                 break;
             case R.id.tr_LL:                //TimeReport
+                startActivity( intenttr );
                 break;
             case R.id.ts_LL:                //TimeSaver社区
+                startActivity( intentsq );
                 break;
             case R.id.st_LL:                //Settings
+                startActivity( intentset );
                 break;
             case R.id.ib_add:
-                TaskDataBase task=new TaskDataBase();
-                task.setContent( "六级模拟试卷" );
-                task.setTime( getTime() );
-                task.save();
-                mList.add( new TaskClass(task.getId(),task.getContent(),task.getTime()) );
-                timeLineAdapter.notifyDataSetChanged();
+//                TaskDataBase task=new TaskDataBase();
+//                task.setContent( "六级模拟试卷" );
+//                task.setTime( getTime() );
+//                task.save();
+//                mList.add( new TaskClass(task.getId(),task.getContent(),task.getTime()) );
+//                timeLineAdapter.notifyDataSetChanged();
                 break;
         }
+    }
+    private void SetClickListener(){
+        openDrawer.setOnClickListener( this );
+        timeLine.setOnClickListener( this );
+        calender.setOnClickListener( this );
+        toDo.setOnClickListener( this );
+        deadLine.setOnClickListener( this );
+        timeReport.setOnClickListener( this );
+        sheQu.setOnClickListener( this );
+        setting.setOnClickListener( this );
+        appManage.setOnClickListener(this);
+        add.setOnClickListener( this );
+    }
+
+    private void initIntents(){
+        intentcal=new Intent( MainActivity.this,CalenderActivity.class );
+        intenttodo=new Intent( MainActivity.this,toDoActivity.class );
+        intentdl=new Intent( MainActivity.this,deadlineActivity.class );
+        intenttr=new Intent( MainActivity.this,timeReportActivity.class );
+        intentsq=new Intent( MainActivity.this,timeSaverCommunityActivity.class );
+        intentset=new Intent( MainActivity.this,SettingActivity.class );
+        intentam=new Intent( MainActivity.this,AppManageActivity.class );
     }
 
     protected String getTime(){
