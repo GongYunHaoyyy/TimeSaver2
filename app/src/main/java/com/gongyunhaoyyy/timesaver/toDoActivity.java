@@ -11,7 +11,7 @@ public class toDoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do);
-        paddingWindow();
+
     }
 
     private void paddingWindow() {

@@ -120,6 +120,7 @@
             android:layout_height="match_parent" />
 
         <Switch
+            android:theme="@style/MyRadioButton"
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -299,36 +300,39 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <RadioButton
+                android:theme="@style/MyRadioButton"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
             <RadioButton
+                android:theme="@style/MyRadioButton"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
             <RadioButton
+                android:theme="@style/MyRadioButton"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
             <RadioButton
+                android:theme="@style/MyRadioButton"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
             <RadioButton
-                android:button="@drawable/shape_gray_check"
-                android:layout_marginRight="10dp"
+                android:theme="@style/MyRadioButton"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 />
         </RadioGroup>
 
