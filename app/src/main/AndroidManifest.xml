@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.gongyunhaoyyy.timesaver">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.gongyunhaoyyy.timesaver">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
-        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions"/>
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -32,12 +33,21 @@
         </activity>
         <activity android:name=".RegisterActivity">
         </activity>
-        <activity android:name=".appcontrol.ThirdPartAppActivity" />
+        <activity android:name=".toDoActivity">
+        </activity>
+        <activity android:name=".deadlineActivity">
+        </activity>
+        <activity android:name=".timeReportActivity">
+        </activity>
+        <activity android:name=".timeSaverCommunityActivity">
+        </activity>
+        <activity android:name=".appcontrol.ThirdPartAppActivity"/>
         <activity android:name=".appcontrol.ManageAppDetail">
         </activity>
         <activity android:name=".appcontrol.AppManageActivity">
         </activity>
-
+        <activity android:name=".SettingActivity">
+        </activity>
     </application>
 
 </manifest>
