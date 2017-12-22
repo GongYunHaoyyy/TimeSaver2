@@ -65,8 +65,8 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_margin="@dimen/setting_spacing"
-            android:layout_width="@dimen/huge_text"
-            android:layout_height="@dimen/huge_text"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/ic_timeline"
             android:layout_gravity="center"/>
         <TextView
@@ -79,6 +79,8 @@
             android:text="Time Line"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
@@ -90,8 +92,8 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_margin="@dimen/setting_spacing"
-            android:layout_width="@dimen/huge_text"
-            android:layout_height="@dimen/huge_text"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/ic_todo"
             android:layout_gravity="center"/>
         <TextView
@@ -104,6 +106,8 @@
             android:text="To Do"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
@@ -129,6 +133,8 @@
             android:text="DeadLine"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
@@ -140,8 +146,8 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_margin="@dimen/setting_spacing"
-            android:layout_width="@dimen/sub_huge_text"
-            android:layout_height="@dimen/sub_huge_text"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/ic_calender"
             android:layout_gravity="center"/>
         <TextView
@@ -154,6 +160,8 @@
             android:text="Calender"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
@@ -178,6 +186,8 @@
             android:text="App Manage"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
@@ -203,6 +213,8 @@
             android:text="Time Report"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
@@ -228,6 +240,8 @@
             android:text="TimeSaver社区"/>
     </LinearLayout>
     <View
+        android:layout_marginRight="@dimen/sub_big_spacing"
+        android:layout_marginLeft="@dimen/sub_big_spacing"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="#5ed4cf"/>
