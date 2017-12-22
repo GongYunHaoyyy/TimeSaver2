@@ -9,11 +9,14 @@ public class TaskClass {
     private int id;
     private String content;
     private String time;
+    private int starttime,endtime;
 
-    public TaskClass(int id, String content, String time) {
+    public TaskClass(int id, String content, String time, int starttime, int endtime) {
         this.id = id;
         this.content = content;
         this.time = time;
+        this.starttime = starttime;
+        this.endtime = endtime;
     }
 
     public int getId() {
@@ -40,4 +43,19 @@ public class TaskClass {
         this.time = time;
     }
 
+    public int getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(int starttime) {
+        this.starttime = starttime;
+    }
+
+    public int getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(int endtime) {
+        this.endtime = endtime;
+    }
 }

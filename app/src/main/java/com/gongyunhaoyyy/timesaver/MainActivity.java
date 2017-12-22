@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView( R.layout.activity_main );
         paddingWindow();
         init();
-        initList();
+//        initList();
         initIntents();
         DividerItemDecoration divider=new DividerItemDecoration( this,DividerItemDecoration.VERTICAL );
         divider.setDrawable( ContextCompat.getDrawable(this,R.drawable.custom_divider) );
@@ -95,12 +95,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         search= findViewById( R.id.ib_search );
     }
 
-    private void initList(){
-        List<TaskDataBase> notedb= DataSupport.findAll( TaskDataBase.class );
-        for (TaskDataBase notedatabase:notedb){
-            mList.add( new TaskClass(notedatabase.getId(),notedatabase.getContent(),notedatabase.getTime()) );
-        }
-    }
+//    private void initList(){
+//        List<TaskDataBase> notedb= DataSupport.findAll( TaskDataBase.class );
+//        for (TaskDataBase notedatabase:notedb){
+//            mList.add( new TaskClass(notedatabase.getId(),notedatabase.getContent(),notedatabase.getTime()) );
+//        }
+//    }
 
     @Override
     public void onClick(View v) {
