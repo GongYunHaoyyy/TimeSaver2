@@ -6,7 +6,7 @@
     android:layout_height="45dp">
 
     <Button
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="10dp"
         android:layout_centerVertical="true"
         android:background="@drawable/title_back"
         android:layout_width="30dp"
@@ -21,7 +21,18 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:layout_marginRight="15dp"
+        android:id="@+id/audioButton"
+        android:layout_centerVertical="true"
+        android:background="@drawable/record"
+        android:layout_marginRight="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_marginRight="10dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"

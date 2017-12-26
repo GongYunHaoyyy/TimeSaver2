@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initIntents();
         DividerItemDecoration divider=new DividerItemDecoration( this,DividerItemDecoration.VERTICAL );
         divider.setDrawable( ContextCompat.getDrawable(this,R.drawable.custom_divider) );
-        recyclerView.addItemDecoration( divider );
+        recyclerView.addItemDecoration(divider);
         SetClickListener();
         layoutManager=new GridLayoutManager(MainActivity.this,1 );
         recyclerView.setLayoutManager( layoutManager );

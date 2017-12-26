@@ -8,7 +8,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="46dp"
         android:background="#1fd7d3d3">
 
         <include layout="@layout/bg_timeline"
@@ -22,13 +22,11 @@
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <include layout="@layout/title_time_line"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/accent_gray"/>
-
-
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
             android:overScrollMode="never"
@@ -49,5 +47,5 @@
         android:scrollbars="none"
         android:layout_gravity="start">
     <include layout="@layout/layout_drawer"/>
-</ScrollView>
+    </ScrollView>
 </android.support.v4.widget.DrawerLayout>
