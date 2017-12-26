@@ -8,12 +8,15 @@ public class TaskClass {
 
     private int id;
     private String content;
-    private String time;
+    private String starttime,endtime;
+    double startY,endY;
 
-    public TaskClass(int id, String content, String time) {
-        this.id = id;
+    public TaskClass(String content, String starttime, String endtime, double startY, double endY) {
         this.content = content;
-        this.time = time;
+        this.starttime = starttime;
+        this.endtime = endtime;
+        this.startY = startY;
+        this.endY = endY;
     }
 
     public int getId() {
@@ -32,12 +35,27 @@ public class TaskClass {
         this.content = content;
     }
 
-    public String getTime() {
-        return time;
+    public String getStarttime() {
+        return starttime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setStarttime(String starttime) {
+        this.starttime = starttime;
     }
 
+    public String getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(String endtime) {
+        this.endtime = endtime;
+    }
+
+    public double getStartY() {
+        return startY;
+    }
+
+    public double getEndY() {
+        return endY;
+    }
 }

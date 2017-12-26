@@ -34,4 +34,13 @@
     <color name="toast_bg">#80000000</color>
     <color name="toast_bg_loading">#50000000</color>
     <color name="toast_text">#fefefe</color>
+    <!--draw color-->
+    <color name="draw_red">#b4f44336</color>
+    <color name="draw_blue">#b42196f3</color>
+    <color name="draw_green">#b44caf50</color>
+    <color name="draw_yellow">#b4ffeb3b</color>
+    <color name="draw_orange">#b4ff9800</color>
+    <color name="draw_purple">#b46636ba</color>
+    <color name="draw_pink">#b4ef2469</color>
+    <color name="draw_cyan">#b451d6d0</color>
 </resources>
