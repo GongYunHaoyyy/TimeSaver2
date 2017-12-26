@@ -22,10 +22,10 @@
     <color name="accent_white">#FFFFFF</color>
     <color name="accent_gray">#b5b5b5</color>
     <color name="accent_black">#000000</color>
-
     <color name="text_color">#2a2a2a</color>
     <color name="light_purple">#493a61</color>
     <color name="colorLightGray">#c4c1c1</color>
+    <color name="colorLightLightGray">#e2dede</color>
     <color name="sub_text_color">#757575</color>
     <color name="div">#e6e6e6</color>
     <color name="white">#ffffffff</color>
