@@ -6,8 +6,8 @@
     android:layout_width="match_parent">
 
 <ScrollView
+    android:scrollbars="none"
     android:id="@+id/scroll_toDo"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -21,31 +21,23 @@
         layout="@layout/title_todo"/>
 
     <TextView
-        android:id="@+id/text_todo"
+        android:id="@+id/tv_todo"
         android:textStyle="bold"
         android:gravity="center_horizontal|bottom"
-        android:paddingBottom="10dp"
+        android:paddingBottom="40dp"
         android:textSize="20sp"
         android:textColor="@color/accent_white"
         android:text="to do 的具体内容"
         android:background="@color/accent_amber"
         android:layout_below="@+id/title_todo"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="140dp" />
 
-    <TextView
-        android:id="@+id/text_description"
-        android:gravity="center_horizontal"
-        android:textColor="@color/accent_white"
-        android:text="description"
-        android:background="@color/accent_amber"
-        android:layout_below="@+id/text_todo"
-        android:layout_width="match_parent"
-        android:layout_height="30dp" />
+
 
     <RelativeLayout
         android:id="@+id/choose_date"
-        android:layout_below="@+id/text_description"
+        android:layout_below="@+id/tv_todo"
         android:layout_width="match_parent"
         android:layout_height="60dp">
         <TextView
@@ -60,10 +52,10 @@
         <TextView
             android:id="@+id/todo_calender"
             android:textColor="@color/accent_black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:gravity="center_vertical"
             android:paddingRight="15dp"
-            android:text="May 15,2016"
+            android:text="2016—5—30"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
@@ -97,7 +89,8 @@
             android:layout_alignParentRight="true"
             android:orientation="horizontal"
             android:layout_marginRight="@dimen/small_spacing">
-            <EditText
+            <TextView
+                android:textColor="@color/accent_black"
                 android:id="@+id/hour1"
                 android:padding="@dimen/small_spacing"
                 android:layout_weight="1"
@@ -106,16 +99,17 @@
                 android:background="#00ffffff"
                 android:gravity="center"
                 android:text="9:00"
-                android:textSize="13sp"/>
+                android:textSize="16sp"/>
             <TextView
                 android:layout_weight="1"
                 android:textColor="@color/accent_black"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:gravity="center_vertical"
-                android:text="-"
+                android:text="—"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
-            <EditText
+            <TextView
+                android:textColor="@color/accent_black"
                 android:id="@+id/hour2"
                 android:padding="@dimen/small_spacing"
                 android:layout_weight="1"
@@ -124,7 +118,7 @@
                 android:background="#00ffffff"
                 android:gravity="center"
                 android:text="11:00"
-                android:textSize="13sp"/>
+                android:textSize="16sp"/>
         </LinearLayout>
 
     </RelativeLayout>
@@ -153,7 +147,7 @@
             android:layout_height="match_parent" />
 
         <Switch
-            android:theme="@style/MyRadioButton"
+            android:theme="@style/MyRadioButton_medium"
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -189,6 +183,7 @@
             android:layout_height="match_parent" />
 
         <TextView
+            android:id="@+id/tv_remind_time"
             android:textColor="@color/accent_black"
             android:textSize="14sp"
             android:gravity="center_vertical"
@@ -223,6 +218,7 @@
             android:layout_height="match_parent" />
 
         <TextView
+            android:id="@+id/tv_site"
             android:textColor="@color/accent_black"
             android:textSize="14sp"
             android:gravity="center_vertical"
@@ -242,43 +238,11 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
-    <RelativeLayout
-        android:id="@+id/notification"
-        android:layout_below="@+id/gray_line4"
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
-        <TextView
-            android:textColor="@color/accent_black"
-            android:paddingLeft="15dp"
-            android:textSize="14sp"
-            android:gravity="center_vertical"
-            android:text="提醒时间"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
 
-        <TextView
-            android:textColor="@color/accent_black"
-            android:textSize="14sp"
-            android:gravity="center_vertical"
-            android:paddingRight="15dp"
-            android:text="提前一个小时"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-    </RelativeLayout>
-
-    <View
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_below="@+id/notification"
-        android:id="@+id/gray_line5"
-        android:background="@color/colorLightLightGray"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
 
     <RelativeLayout
         android:id="@+id/repeat"
-        android:layout_below="@+id/gray_line5"
+        android:layout_below="@+id/gray_line4"
         android:layout_width="match_parent"
         android:layout_height="60dp">
         <TextView
@@ -290,15 +254,16 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
 
-        <TextView
-            android:textColor="@color/accent_black"
-            android:textSize="14sp"
-            android:gravity="center_vertical"
-            android:paddingRight="15dp"
-            android:text="否"
-            android:layout_alignParentRight="true"
+        <Switch
+            android:theme="@style/MyRadioButton_medium"
+            android:id="@+id/switch2"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
     </RelativeLayout>
 
 
@@ -325,43 +290,34 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
 
+
         <RadioGroup
             android:layout_alignParentRight="true"
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
             <RadioButton
-                android:theme="@style/MyRadioButton"
+                android:text="低"
+                android:theme="@style/MyRadioButton_medium"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
             <RadioButton
-                android:theme="@style/MyRadioButton"
+                android:text="中"
+                android:theme="@style/MyRadioButton_medium"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
             <RadioButton
-                android:theme="@style/MyRadioButton"
+                android:layout_marginRight="15dp"
+                android:text="高"
+                android:theme="@style/MyRadioButton_medium"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <RadioButton
-                android:theme="@style/MyRadioButton"
-                android:layout_gravity="center_vertical"
-                android:id="@+id/radioButton4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <RadioButton
-                android:theme="@style/MyRadioButton"
-                android:layout_gravity="center_vertical"
-                android:id="@+id/radioButton5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />

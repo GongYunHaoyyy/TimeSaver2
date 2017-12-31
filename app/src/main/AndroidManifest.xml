@@ -37,9 +37,11 @@
         </activity>
         <activity android:name=".RegisterActivity">
         </activity>
-        <activity android:name=".toDoActivity">
+        <activity android:name=".toDoActivity"
+            android:theme="@style/toDoActivity">
         </activity>
-        <activity android:name=".deadlineActivity">
+        <activity android:name=".deadlineActivity"
+            android:theme="@style/deadlineActivity">
         </activity>
         <activity android:name=".timeReportActivity">
         </activity>
