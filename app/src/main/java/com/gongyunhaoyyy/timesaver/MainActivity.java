@@ -10,11 +10,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gongyunhaoyyy.timesaver.appcontrol.AppManageActivity;
 
@@ -24,13 +32,21 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,View.OnTouchListener{
     private ImageButton openDrawer;
     private DrawerLayout drawerLayout;
     private LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting,appManage;
     private ImageButton add,search;
     private List<TaskClass> mList=new ArrayList<>(  );
     private Intent intentcal,intenttodo,intentdl,intenttr,intentsq,intentset,intentam;
+    private double Startx,Starty,Endx,Endy;
+    private DrawView view;
+    private Button yes,edit,delete;
+    private TextView sj,content;
+    private View mLayoutPopView;//悬浮窗的布局
+    private ItemClickPopup mItemPop;
+    int i;
+    FrameLayout ll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initIntents();
         SetClickListener();
         drawTimeLine();
+        setTouchListenner();
     }
 
     @Override
@@ -50,13 +67,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void drawTimeLine(){
-        FrameLayout ll=(FrameLayout) findViewById(R.id.bg_tl_frame);
-        final DrawView view=new DrawView(this,drawGetTime(),getTime(),mList,mList.size());
+        initList();
+        ll.removeView( view );
+        view=new DrawView(this,drawGetTime(),getTime(),mList,mList.size());
         view.setMinimumHeight(100);
         view.setMinimumWidth(400);
         //通知view组件重绘
         view.invalidate();
         ll.addView(view);
+    }
+    private void setTouchListenner(){
+        ll.setOnTouchListener(this);
     }
 
     private void paddingWindow() {
@@ -67,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init(){
+        ll=findViewById(R.id.bg_tl_frame);
         openDrawer= findViewById( R.id.ib_opendrawer );
         drawerLayout= findViewById( R.id.drawerLayout );
         timeLine= findViewById( R.id.tl_LL );
@@ -161,5 +183,101 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 (float) (Float.parseFloat( time2[0] )*45.5+Float.parseFloat( time2[1] )/60*45),
                 this.getResources().getDisplayMetrics());
         return position;
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        switch (event.getAction()) {
+            /**
+             * 点击的开始位置
+             */
+            case MotionEvent.ACTION_DOWN:
+                Startx=event.getX();
+                Starty=event.getY();
+//                tvTouchShowStart.setText("起始位置：(" + event.getX() + " , " + event.getY()+")");
+                break;
+            /**
+             * 触屏实时位置
+             */
+            case MotionEvent.ACTION_MOVE:
+//                tvTouchShow.setText("实时位置：(" + event.getX() + " , " + event.getY()+")");
+                break;
+            /**
+             * 离开屏幕的位置
+             */
+            case MotionEvent.ACTION_UP:
+                Endx=event.getX();
+                Endy=event.getY();
+                if (Starty!=Endy){
+                }else {
+                    for (i=0;i<mList.size();i++){
+                        if (Endy>mList.get( i ).getStartY()&&Endy<mList.get( i ).getEndY()){
+//                            Toast.makeText( MainActivity.this,mList.get( i ).getContent(),Toast.LENGTH_SHORT).show();
+                            mLayoutPopView = LayoutInflater.from(MainActivity.this).inflate(R.layout
+                                    .pop_item_click, null);
+                            mItemPop = new ItemClickPopup(findViewById(R.id.frame_haha), this, mLayoutPopView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+                            mItemPop.setOnPopupWindowListener( new ItemClickPopup.PopupWindowListener() {
+                                @Override
+                                public void initView() {
+                                    yes=mLayoutPopView.findViewById( R.id.finish );
+                                    sj=mLayoutPopView.findViewById( R.id.item_shijian );
+                                    edit=mLayoutPopView.findViewById( R.id.edit );
+                                    content=mLayoutPopView.findViewById( R.id.item_content );
+                                    delete=mLayoutPopView.findViewById( R.id.delete );
+                                    content=(TextView)mLayoutPopView.findViewById( R.id.item_content );
+                                    sj.setText( mList.get( i ).getStarttime()+"-"+mList.get( i ).getEndtime() );
+                                    yes.setOnClickListener( new View.OnClickListener( ) {
+                                        @Override
+                                        public void onClick(View v) {
+                                        }
+                                    } );
+                                    sj.setOnClickListener( new View.OnClickListener( ) {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                        }
+                                    } );
+                                    content.setOnClickListener( new View.OnClickListener( ) {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                        }
+                                    } );
+                                    delete.setOnClickListener( new View.OnClickListener( ) {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                        }
+                                    } );
+                                    edit.setOnClickListener( new View.OnClickListener( ) {
+                                        @Override
+                                        public void onClick(View v) {
+
+                                        }
+                                    } );
+                                }
+                            } );
+                            mItemPop.showView();
+//                            Animation scaleAanimation = AnimationUtils.loadAnimation(this,R.anim.ani_popwindow);
+//                            mLayoutPopView.startAnimation(scaleAanimation);
+                            mItemPop.setBackgroundAlpha(0.6f);
+                            break;
+                        }else {
+                            continue;
+                        }
+                    }
+//                    Toast.makeText( MainActivity.this,"点击事件",Toast.LENGTH_SHORT ).show();
+                }
+//                tvTouchShow.setText("结束位置：(" + event.getX() + " , " + event.getY()+")");
+                break;
+            default:
+                break;
+        }
+        /**
+         *  注意返回值
+         *  true：view继续响应Touch操作；
+         *  false：view不再响应Touch操作，故此处若为false，只能显示起始位置，不能显示实时位置和结束位置
+         */
+        return true;
     }
 }

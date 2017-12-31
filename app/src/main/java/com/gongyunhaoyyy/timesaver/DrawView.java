@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.provider.CalendarContract;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +23,10 @@ public class DrawView extends View {
     String T="",starttime,content;
     List<TaskClass> drawlist=new ArrayList<>();
     int[] randomcolors={
-            Color.argb( 160,244,67,54 ),Color.argb( 160,33,150,243 ),
-            Color.argb( 160,76,175,80 ),Color.argb( 160,255,245,59 ),
-            Color.argb( 160,255,152,0 ),Color.argb( 160,102,54,186 ),
-            Color.argb( 160,239,36,105 ),Color.argb( 160,81,214,208 )};
+            Color.argb( 100,244,67,54 ),Color.argb( 100,33,150,243 ),
+            Color.argb( 100,76,175,80 ),Color.argb( 100,255,245,59 ),
+            Color.argb( 100,255,152,0 ),Color.argb( 100,102,54,186 ),
+            Color.argb( 100,239,36,105 ),Color.argb(100,81,214,208 )};
     int count;
 
     public DrawView(Context context,double Y,String T,List<TaskClass> drawlist,int n) {
@@ -38,10 +40,16 @@ public class DrawView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         // 创建画笔
         Paint p = new Paint();
+//        //清屏
+//        p.setXfermode(new PorterDuffXfermode( PorterDuff.Mode.CLEAR));
+//        canvas.drawPaint(p);
+//        p.setXfermode(new PorterDuffXfermode( PorterDuff.Mode.SRC));
+//        //这个一定要加，不然画布背景为黑色
+//        canvas.drawColor(Color.WHITE);
 
+        //这里设置paint并开始自己的画图
         p.setTextSize( 30 );
         p.setStrokeWidth( 5 );
         canvas.drawText( T, 10, (float) Y, p );
@@ -59,7 +67,6 @@ public class DrawView extends View {
             p.setTextSize( 45 );
             canvas.drawText(drawlist.get( i ).getContent(), 300, (float) (drawlist.get( i ).getStartY()+drawlist.get( i ).getEndY())/2-5, p);
         }
-
     }
     private int getRandomIndex(){
         Random random=new Random();
