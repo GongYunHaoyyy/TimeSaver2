@@ -6,6 +6,8 @@
     android:layout_width="match_parent">
 
 <ScrollView
+    android:id="@+id/scroll_toDo"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
@@ -72,7 +74,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/choose_date"
         android:id="@+id/gray_line1"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -132,7 +134,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/choose_time"
         android:id="@+id/gray_line2"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -168,7 +170,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/whole_day"
         android:id="@+id/gray_line6"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -202,7 +204,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/remind_time"
         android:id="@+id/gray_line3"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -236,7 +238,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/place"
         android:id="@+id/gray_line4"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -270,7 +272,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/notification"
         android:id="@+id/gray_line5"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -305,7 +307,7 @@
         android:layout_marginRight="15dp"
         android:layout_below="@+id/repeat"
         android:id="@+id/gray_line7"
-        android:background="@color/colorLightGray"
+        android:background="@color/colorLightLightGray"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
@@ -322,8 +324,6 @@
             android:text="优先级"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
-
-
 
         <RadioGroup
             android:layout_alignParentRight="true"
