@@ -1,8 +1,11 @@
 package com.gongyunhaoyyy.timesaver;
 
 import android.annotation.SuppressLint;
+import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
+import android.service.autofill.Dataset;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -18,10 +21,12 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.gongyunhaoyyy.timesaver.appcontrol.AppManageActivity;
@@ -30,10 +35,11 @@ import org.litepal.crud.DataSupport;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,View.OnTouchListener{
-    private ImageButton openDrawer;
+    private ImageButton openDrawer,closeDrawer,exit_user;
     private DrawerLayout drawerLayout;
     private LinearLayout timeLine,calender,toDo,deadLine,timeReport,sheQu,setting,appManage;
     private ImageButton add,search;
@@ -41,8 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Intent intentcal,intenttodo,intentdl,intenttr,intentsq,intentset,intentam;
     private double Startx,Starty,Endx,Endy;
     private DrawView view;
-    private Button yes,edit,delete;
-    private TextView sj,content;
+    private Button yes,delete;
+    private TextView sj1,sj2;
+    private EditText content;
     private View mLayoutPopView;//悬浮窗的布局
     private ItemClickPopup mItemPop;
     int i;
@@ -88,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init(){
+        closeDrawer=findViewById( R.id.close_drawer );
+        exit_user=findViewById( R.id.exit_user );
         ll=findViewById(R.id.bg_tl_frame);
         openDrawer= findViewById( R.id.ib_opendrawer );
         drawerLayout= findViewById( R.id.drawerLayout );
@@ -104,9 +113,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initList(){
+        mList.clear();
         List<TaskDataBase> notedb= DataSupport.findAll( TaskDataBase.class );
         for (TaskDataBase notedatabase:notedb){
-            mList.add( new TaskClass(notedatabase.getContent(),notedatabase.getStarttime(),notedatabase.getEndtime(),notedatabase.getStartY(),notedatabase.getEndY()) );
+            mList.add( new TaskClass(notedatabase.getId(),notedatabase.getContent(),notedatabase.getStarttime(),notedatabase.getEndtime(),notedatabase.getStartY(),notedatabase.getEndY()) );
         }
     }
 
@@ -142,9 +152,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.ib_add:               //To Do
                 startActivity( intenttodo );
                 break;
+            case R.id.close_drawer:
+                drawerLayout.closeDrawer( Gravity.START );
+                break;
+            case R.id.exit_user:
+                SharedPreferences.Editor nameeditor = getSharedPreferences( "userdata", MODE_PRIVATE ).edit( );
+                Intent ex=new Intent( MainActivity.this, LoginActivity.class );
+                nameeditor.putString( "getuserdata","" );
+                nameeditor.apply();
+                startActivity( ex );
+                finish();
+                break;
+
         }
     }
     private void SetClickListener(){
+        closeDrawer.setOnClickListener( this );
+        exit_user.setOnClickListener( this );
         openDrawer.setOnClickListener( this );
         timeLine.setOnClickListener( this );
         calender.setOnClickListener( this );
@@ -212,7 +236,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }else {
                     for (i=0;i<mList.size();i++){
                         if (Endy>mList.get( i ).getStartY()&&Endy<mList.get( i ).getEndY()){
-//                            Toast.makeText( MainActivity.this,mList.get( i ).getContent(),Toast.LENGTH_SHORT).show();
                             mLayoutPopView = LayoutInflater.from(MainActivity.this).inflate(R.layout
                                     .pop_item_click, null);
                             mItemPop = new ItemClickPopup(findViewById(R.id.frame_haha), this, mLayoutPopView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
@@ -220,39 +243,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 @Override
                                 public void initView() {
                                     yes=mLayoutPopView.findViewById( R.id.finish );
-                                    sj=mLayoutPopView.findViewById( R.id.item_shijian );
-                                    edit=mLayoutPopView.findViewById( R.id.edit );
-                                    content=mLayoutPopView.findViewById( R.id.item_content );
+                                    sj1=mLayoutPopView.findViewById( R.id.hour1 );
+                                    sj2=mLayoutPopView.findViewById( R.id.hour2 );
+                                    content=mLayoutPopView.findViewById( R.id.item_content_edit );
                                     delete=mLayoutPopView.findViewById( R.id.delete );
-                                    content=(TextView)mLayoutPopView.findViewById( R.id.item_content );
-                                    sj.setText( mList.get( i ).getStarttime()+"-"+mList.get( i ).getEndtime() );
+                                    sj1.setText( mList.get( i ).getStarttime());
+                                    sj2.setText( mList.get( i ).getEndtime() );
                                     yes.setOnClickListener( new View.OnClickListener( ) {
                                         @Override
                                         public void onClick(View v) {
                                         }
                                     } );
-                                    sj.setOnClickListener( new View.OnClickListener( ) {
+                                    sj1.setOnClickListener( new View.OnClickListener( ) {
                                         @Override
                                         public void onClick(View v) {
-
+                                            Calendar calendar_1 = Calendar.getInstance();
+                                            new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                                                @Override
+                                                public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                                                    String time = "";
+                                                    time = time + i;
+                                                    time = time + ":";
+                                                    time = time + i1;
+                                                    sj1.setText(time);
+                                                }
+                                            },calendar_1.get(Calendar.HOUR_OF_DAY),calendar_1.get(Calendar.MINUTE),true).show();
+                                        }
+                                    } );
+                                    sj2.setOnClickListener( new View.OnClickListener( ) {
+                                        @Override
+                                        public void onClick(View v) {
+                                            Calendar calendar_1 = Calendar.getInstance();
+                                            new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                                                @Override
+                                                public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                                                    String time = "";
+                                                    time = time + i;
+                                                    time = time + ":";
+                                                    time = time + i1;
+                                                    sj2.setText(time);
+                                                }
+                                            },calendar_1.get(Calendar.HOUR_OF_DAY),calendar_1.get(Calendar.MINUTE),true).show();
                                         }
                                     } );
                                     content.setOnClickListener( new View.OnClickListener( ) {
                                         @Override
                                         public void onClick(View v) {
-
                                         }
                                     } );
                                     delete.setOnClickListener( new View.OnClickListener( ) {
                                         @Override
                                         public void onClick(View v) {
-
-                                        }
-                                    } );
-                                    edit.setOnClickListener( new View.OnClickListener( ) {
-                                        @Override
-                                        public void onClick(View v) {
-
+                                            DataSupport.delete( TaskDataBase.class,mList.get( i ).getId() );
+                                            initList();
+                                            drawTimeLine();
+                                            mItemPop.dismiss();
                                         }
                                     } );
                                 }

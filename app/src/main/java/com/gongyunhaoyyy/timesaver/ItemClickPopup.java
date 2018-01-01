@@ -41,7 +41,7 @@ public class ItemClickPopup implements PopupWindow.OnDismissListener{
         }
         mPopupWindow.setBackgroundDrawable(new ColorDrawable(0xFFFFFF));
         //        mPopupWindow.setAnimationStyle( R.style.myCourseAnim );
-        mPopupWindow.showAtLocation(mParentView, Gravity.CENTER, Gravity.CENTER, Gravity.CENTER);
+        mPopupWindow.showAtLocation(mParentView, Gravity.CENTER, 0, 0);
         mPopupWindow.update();
         mPopupWindow.setOnDismissListener(this);
     }

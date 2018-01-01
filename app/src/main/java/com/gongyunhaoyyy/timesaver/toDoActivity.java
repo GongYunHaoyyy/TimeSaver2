@@ -160,6 +160,7 @@ public class toDoActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_todo_ok:
+                String todocontent=tv_todo.getText().toString();
                 String todotime = tv_hour1.getText().toString()+"-"+tv_hour2.getText().toString();
                 String[] tttime = todotime.split( "-" );
                 String[] starttime = tttime[0].split( ":" );
@@ -172,7 +173,7 @@ public class toDoActivity extends AppCompatActivity implements View.OnClickListe
                         (float) (Float.parseFloat( endtime[0] )*45.5+Float.parseFloat( endtime[1] )/60*45),
                         this.getResources().getDisplayMetrics());
                 TaskDataBase task=new TaskDataBase();
-                task.setContent( "这是测试文字" );
+                task.setContent( todocontent );
                 task.setStarttime( tttime[0] );
                 task.setEndtime( tttime[1] );
                 task.setStartY( position1 );
@@ -211,7 +212,6 @@ public class toDoActivity extends AppCompatActivity implements View.OnClickListe
                          time = time + ":";
                          time = time + i1;
                          tv_hour1.setText(time);
-
 
                     }
                 },calendar_1.get(Calendar.HOUR_OF_DAY),calendar_1.get(Calendar.MINUTE),true).show();

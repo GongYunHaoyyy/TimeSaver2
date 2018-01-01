@@ -13,12 +13,14 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/close_drawer"
             android:layout_width="@dimen/big_spacing"
             android:layout_height="@dimen/big_spacing"
             android:layout_marginLeft="@dimen/sub_medium_spacing"
             android:background="@drawable/ic_exit_drawer"/>
 
         <ImageButton
+            android:id="@+id/exit_user"
             android:layout_width="@dimen/sub_big_spacing"
             android:layout_height="@dimen/sub_big_spacing"
             android:layout_marginRight="@dimen/sub_medium_spacing"

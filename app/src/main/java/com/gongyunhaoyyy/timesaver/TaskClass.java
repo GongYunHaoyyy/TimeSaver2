@@ -11,7 +11,8 @@ public class TaskClass {
     private String starttime,endtime;
     double startY,endY;
 
-    public TaskClass(String content, String starttime, String endtime, double startY, double endY) {
+    public TaskClass(int id,String content, String starttime, String endtime, double startY, double endY) {
+        this.id=id;
         this.content = content;
         this.starttime = starttime;
         this.endtime = endtime;
