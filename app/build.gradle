@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.gongyunhaoyyy.timesaver"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -37,4 +37,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation files('libs/fastjson-1.2.2.jar')
     implementation files('libs/bdasr_V3_20171108_9800a2a.jar')
+    implementation files('libs/okhttp-3.9.1.jar')
+    implementation files('libs/okio-1.13.0.jar')
+    implementation files('libs/jsoup-1.11.2.jar')
 }
